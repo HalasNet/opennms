@@ -99,12 +99,12 @@
 					    	StringBuilder buf = new StringBuilder("<ul class=\"list-unstyled\">"); 
 					    	for(Filter queryElement : queryElements) {
 					    	    buf.append("<li>");
-					    		buf.append(WebSecurityUtils.sanitizeString(queryElement.getTextDescription()));
+					    		buf.append(queryElement.getTextDescription());
 							    buf.append("</li>");
 					    	}
 					    	buf.append("</ul>");
-					    	
-					    	pageContext.setAttribute("favTitle", buf.toString());
+
+					    	pageContext.setAttribute("favTitle", WebSecurityUtils.sanitizeString(buf.toString()));
     					%>
                       
                           <li>
